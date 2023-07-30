@@ -1,0 +1,211 @@
+{% extends 'base.html' %} {% block title%}SignIn{% endblock title%} {% extends
+'base.html' %} {% block head %}
+<h1>Profile Page</h1>
+{% endblock head %} {% block body %} {% for post in posts %}
+
+<ul
+  class="list-group"
+  style="
+    color: white;
+    font-weight: bold;
+    background-color: #737373;
+    text-align: center;
+  "
+>
+  <li
+    class="list-group-item"
+    style="
+      color: white;
+      font-weight: bold;
+      background-color: #737373;
+      text-align: center;
+    "
+  >
+    <h5>Name : {{post.FullName}}</h5>
+  </li>
+  <li
+    class="list-group-item"
+    style="
+      color: white;
+      font-weight: bold;
+      background-color: #737373;
+      text-align: center;
+    "
+  >
+    <h5>Email : {{post.Email}}</h5>
+  </li>
+  <li
+    class="list-group-item"
+    style="
+      color: white;
+      font-weight: bold;
+      background-color: #737373;
+      text-align: center;
+    "
+  >
+    <h5>Gender : {{post.Gender}}</h5>
+  </li>
+  <li
+    class="list-group-item"
+    style="
+      color: white;
+      font-weight: bold;
+      background-color: #737373;
+      text-align: center;
+    "
+  >
+    <h5>PhoneNumber : {{post.PhoneNumber}}</h5>
+  </li>
+  <li
+    class="list-group-item"
+    style="
+      color: white;
+      font-weight: bold;
+      background-color: #737373;
+      text-align: center;
+    "
+  >
+    <h5>DOB : {{post.DOB}}</h5>
+  </li>
+  <li
+    class="list-group-item"
+    style="
+      color: white;
+      font-weight: bold;
+      background-color: #737373;
+      text-align: center;
+    "
+  >
+    <h5>Membership plan : {{post.SelectMembershipplan}}</h5>
+  </li>
+  <li
+    class="list-group-item"
+    style="
+      color: white;
+      font-weight: bold;
+      background-color: #737373;
+      text-align: center;
+    "
+  >
+    <h5>Trainer : {{post.SelectTrainer}}</h5>
+  </li>
+  <li
+    class="list-group-item"
+    style="
+      color: white;
+      font-weight: bold;
+      background-color: #737373;
+      text-align: center;
+    "
+  >
+    <h5>Reference : {{post.Reference}}</h5>
+  </li>
+  <li
+    class="list-group-item"
+    style="
+      color: white;
+      font-weight: bold;
+      background-color: #737373;
+      text-align: center;
+    "
+  >
+    <h5>Address : {{post.Address}}</h5>
+  </li>
+  <li
+    class="list-group-item"
+    style="
+      color: white;
+      font-weight: bold;
+      background-color: #737373;
+      text-align: center;
+    "
+  >
+    <h5>Payment Status : {{post.paymentStatus}}</h5>
+  </li>
+  <li
+    class="list-group-item"
+    style="
+      color: white;
+      font-weight: bold;
+      background-color: #737373;
+      text-align: center;
+    "
+  >
+    <h5>Amount Paid : {{post.Price}}</h5>
+  </li>
+  <li
+    class="list-group-item"
+    style="
+      color: white;
+      font-weight: bold;
+      background-color: #737373;
+      text-align: center;
+    "
+  >
+    <h5>Upcoming Due Date : {{post.DueDate}}</h5>
+  </li>
+  <li
+    class="list-group-item"
+    style="
+      color: white;
+      font-weight: bold;
+      background-color: #737373;
+      text-align: center;
+    "
+  >
+    <h5>Joining date : {{post.timeStamp}}</h5>
+  </li>
+</ul>
+
+{% endfor %}
+<div class="col-md-8">
+
+
+  <div><Center><h2 class="display-4 mt-3"><b>Attendance Data</b></h2></Center></div>
+
+
+  
+  <table class="table">
+    <thead class="thead-warning">
+      <tr>
+      
+        <th scope="col">Date</th>
+        <th scope="col">Login</th>
+        <th scope="col">Logout</th>
+        <th scope="col">Workout</th>
+        <th scope="col">Trained By</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      {% for attend in attendance %}
+      <tr>
+        
+        <td>{{attend.Selectdate}}</td>
+        <td>{{attend.Login}}</td>
+        <td>{{attend.Logout}}</td>
+        <td>{{attend.SelectWorkout}}</td>
+        <td>{{attend.TrainedBy}}</td>
+        
+       
+     
+        
+       
+      </tr>
+      {% endfor %}
+    
+    </tbody>
+  </table>
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+{% endblock body %}
